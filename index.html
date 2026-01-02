@@ -122,7 +122,7 @@
         }
         
         /* Mobile tap indicator */
-        @media (max-width: 768px) {
+        @media (max-width: 640px) {
             .card-flip::after {
                 content: 'Tap to flip';
                 position: absolute;
@@ -209,6 +209,25 @@
             
             /* Mobile floating elements */
             .mobile-float-adjust .absolute { position: relative; margin: 0.5rem 0; }
+            
+            /* Card flip mobile optimizations */
+            .card-flip {
+                max-width: 320px;
+                margin: 0 auto;
+            }
+            
+            .card-flip-inner {
+                aspect-ratio: 3/2;
+            }
+            
+            .card-flip-front img,
+            .card-flip-back img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 1.5rem;
+            }
         }
         
         @media (max-width: 480px) {
@@ -312,7 +331,7 @@
                 </div>
                 <div class="relative fade-in" style="animation-delay: 0.3s;">
                     <div class="card-flip w-full max-w-sm mx-auto" id="heroCard">
-                        <div class="card-flip-inner">
+                        <div class="card-flip-inner aspect-[3/2]">
                             <!-- Front of card -->
                             <div class="card-flip-front">
                                 <img src="7.png" alt="Ekam Care Emergency Card Front" class="w-full h-full object-cover rounded-3xl shadow-2xl">
@@ -376,18 +395,16 @@
                         </p>
                     </div>
                 </div>
-                <div class="order-1 lg:order-2 relative">
-                    <div class="relative">
-                        <img src="2.png" alt="Emergency Safety" class="rounded-2xl shadow-2xl w-full h-[400px] object-cover">
-                        <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl">
-                            <div class="flex items-center gap-4">
-                                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-shield-heart text-red-600 text-2xl"></i>
-                                </div>
-                                <div>
-                                    <div class="text-3xl font-bold text-gray-900">24/7</div>
-                                    <p class="text-gray-600">Emergency Ready</p>
-                                </div>
+                <div class="relative fade-in" style="animation-delay: 0.3s;">
+                    <div class="card-flip w-full max-w-sm mx-auto" id="aboutCard">
+                        <div class="card-flip-inner aspect-[3/2]">
+                            <!-- Front of card -->
+                            <div class="card-flip-front">
+                                <img src="7.png" alt="Ekam Care Emergency Card Front" class="w-full h-full object-cover rounded-3xl shadow-2xl">
+                            </div>
+                            <!-- Back of card -->
+                            <div class="card-flip-back">
+                                <img src="11.png" alt="Ekam Care Emergency Card Back" class="w-full h-full object-cover rounded-3xl shadow-2xl">
                             </div>
                         </div>
                     </div>
@@ -626,7 +643,7 @@
                     <!-- Red Card -->
                     <div class="card-item bg-white rounded-xl sm:rounded-2xl p-3 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:scale-105" data-card="red">
                         <div class="aspect-[3/2] rounded-lg sm:rounded-xl mb-3 sm:mb-4 overflow-hidden">
-                            <img src="2.png" alt="Amazon Red Card" class="w-full h-full object-cover">
+                            <img src="2.png" alt="Amazon Red Card" class="w-full h-full object-cover object-center">
                         </div>
                         <div class="text-center">
                             <h4 class="font-bold text-gray-900 mb-1 sm:mb-2 mobile-text-sm sm:text-base">Amazon Red Card</h4>
@@ -1061,43 +1078,85 @@
 
         // Card flip functionality for mobile
         const heroCard = document.getElementById('heroCard');
-        let isFlipped = false;
+        const aboutCard = document.getElementById('aboutCard');
+        let heroFlipped = false;
+        let aboutFlipped = false;
         
-        // Touch/click event for card flip
-        heroCard.addEventListener('click', () => {
-            isFlipped = !isFlipped;
-            if (isFlipped) {
-                heroCard.classList.add('flipped');
-            } else {
-                heroCard.classList.remove('flipped');
-            }
-        });
-        
-        // Touch events for swipe gesture
-        let startX = 0;
-        let startY = 0;
-        
-        heroCard.addEventListener('touchstart', (e) => {
-            startX = e.touches[0].clientX;
-            startY = e.touches[0].clientY;
-        });
-        
-        heroCard.addEventListener('touchend', (e) => {
-            const endX = e.changedTouches[0].clientX;
-            const endY = e.changedTouches[0].clientY;
-            const diffX = startX - endX;
-            const diffY = startY - endY;
-            
-            // Check if it's a horizontal swipe (left or right)
-            if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
-                isFlipped = !isFlipped;
-                if (isFlipped) {
+        // Touch/click event for hero card flip
+        if (heroCard) {
+            heroCard.addEventListener('click', () => {
+                heroFlipped = !heroFlipped;
+                if (heroFlipped) {
                     heroCard.classList.add('flipped');
                 } else {
                     heroCard.classList.remove('flipped');
                 }
-            }
-        });
+            });
+            
+            // Touch events for swipe gesture on hero card
+            let startX = 0;
+            let startY = 0;
+            
+            heroCard.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+                startY = e.touches[0].clientY;
+            });
+            
+            heroCard.addEventListener('touchend', (e) => {
+                const endX = e.changedTouches[0].clientX;
+                const endY = e.changedTouches[0].clientY;
+                const diffX = startX - endX;
+                const diffY = startY - endY;
+                
+                // Check if it's a horizontal swipe (left or right)
+                if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+                    heroFlipped = !heroFlipped;
+                    if (heroFlipped) {
+                        heroCard.classList.add('flipped');
+                    } else {
+                        heroCard.classList.remove('flipped');
+                    }
+                }
+            });
+        }
+        
+        // Touch/click event for about card flip
+        if (aboutCard) {
+            aboutCard.addEventListener('click', () => {
+                aboutFlipped = !aboutFlipped;
+                if (aboutFlipped) {
+                    aboutCard.classList.add('flipped');
+                } else {
+                    aboutCard.classList.remove('flipped');
+                }
+            });
+            
+            // Touch events for swipe gesture on about card
+            let aboutStartX = 0;
+            let aboutStartY = 0;
+            
+            aboutCard.addEventListener('touchstart', (e) => {
+                aboutStartX = e.touches[0].clientX;
+                aboutStartY = e.touches[0].clientY;
+            });
+            
+            aboutCard.addEventListener('touchend', (e) => {
+                const endX = e.changedTouches[0].clientX;
+                const endY = e.changedTouches[0].clientY;
+                const diffX = aboutStartX - endX;
+                const diffY = aboutStartY - endY;
+                
+                // Check if it's a horizontal swipe (left or right)
+                if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+                    aboutFlipped = !aboutFlipped;
+                    if (aboutFlipped) {
+                        aboutCard.classList.add('flipped');
+                    } else {
+                        aboutCard.classList.remove('flipped');
+                    }
+                }
+            });
+        }
 
         // Back to Top
         const backToTop = document.getElementById('back-to-top');
