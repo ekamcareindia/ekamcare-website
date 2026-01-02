@@ -112,9 +112,67 @@
             transform: translateX(0);
         }
 
-        /* Cards grid transition */
-        #cardsGrid {
-            transition: all 0.5s ease;
+        /* Mobile Responsive Styles */
+        @media (max-width: 640px) {
+            /* Hero section mobile */
+            .hero-mobile { padding: 2rem 0; }
+            .hero-title { font-size: 2.5rem; line-height: 1.2; }
+            .hero-buttons { flex-direction: column; width: 100%; }
+            .hero-buttons a { width: 100%; justify-content: center; }
+            
+            /* Cards mobile */
+            .cards-mobile { grid-template-columns: 1fr; gap: 1rem; }
+            .card-form-mobile { margin-top: 2rem; }
+            
+            /* Steps mobile */
+            .steps-mobile { grid-template-columns: 1fr; gap: 2rem; }
+            
+            /* Comparison table mobile */
+            .comparison-mobile { font-size: 0.875rem; }
+            .comparison-mobile .p-6 { padding: 1rem; }
+            
+            /* Pricing mobile */
+            .pricing-mobile { grid-template-columns: 1fr; }
+            
+            /* Contact mobile */
+            .contact-mobile { grid-template-columns: 1fr; gap: 2rem; }
+            
+            /* Footer mobile */
+            .footer-mobile { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+            
+            /* Mobile padding adjustments */
+            .mobile-px { padding-left: 1rem; padding-right: 1rem; }
+            .mobile-py { padding-top: 2rem; padding-bottom: 2rem; }
+            
+            /* Mobile text sizes */
+            .mobile-text-sm { font-size: 0.875rem; }
+            .mobile-text-base { font-size: 1rem; }
+            .mobile-text-lg { font-size: 1.125rem; }
+            .mobile-text-xl { font-size: 1.25rem; }
+            .mobile-text-2xl { font-size: 1.5rem; }
+            .mobile-text-3xl { font-size: 1.875rem; }
+            
+            /* Mobile spacing */
+            .mobile-mb-4 { margin-bottom: 1rem; }
+            .mobile-mb-6 { margin-bottom: 1.5rem; }
+            .mobile-mb-8 { margin-bottom: 2rem; }
+            
+            /* Mobile form adjustments */
+            .mobile-form-grid { grid-template-columns: 1fr; }
+            
+            /* Mobile image adjustments */
+            .mobile-img { max-width: 280px; margin: 0 auto; }
+            
+            /* Mobile floating elements */
+            .mobile-float-adjust .absolute { position: relative; margin: 0.5rem 0; }
+        }
+        
+        @media (max-width: 480px) {
+            /* Extra small mobile adjustments */
+            .hero-title { font-size: 2rem; }
+            .mobile-text-3xl { font-size: 1.5rem; }
+            .mobile-text-2xl { font-size: 1.25rem; }
+            .mobile-px { padding-left: 0.75rem; padding-right: 0.75rem; }
         }
     </style>
 </head>
@@ -182,41 +240,41 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="7.png">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="fade-in">
-                    <div class="inline-flex items-center gap-2 bg-red-100 text-red-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+    <section id="home" class="py-12 sm:py-16 lg:py-20 hero-mobile">
+        <div class="max-w-7xl mx-auto mobile-px px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                <div class="fade-in text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-red-100 text-red-700 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6">
                         <i class="fas fa-shield-heart"></i>
                         Emergency Safety Solution
                     </div>
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+                    <h1 class="hero-title text-3xl sm:text-4xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4 sm:mb-6">
                         Ekam Care <br><span class="gradient-text">Emergency Card</span>
                     </h1>
-                    <p class="text-xl text-gray-600 mb-4 font-medium">
+                    <p class="mobile-text-lg sm:text-xl text-gray-600 mb-3 sm:mb-4 font-medium">
                         When communication fails, Ekam Care connects.
                     </p>
-                    <p class="text-gray-600 text-lg mb-8 max-w-lg">
+                    <p class="text-gray-600 mobile-text-base sm:text-lg mb-6 sm:mb-8 max-w-lg mx-auto lg:mx-0">
                         A QR-based emergency safety card that helps anyone instantly notify your family with your live location — <strong>no app required.</strong>
                     </p>
-                    <div class="flex flex-wrap gap-4 mb-10">
-                        <a href="#cards" class="pulse-btn bg-red-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-red-700 transition flex items-center gap-2 shadow-xl">
+                    <div class="hero-buttons flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mb-8 sm:mb-10">
+                        <a href="#cards" class="pulse-btn bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:bg-red-700 transition flex items-center gap-2 shadow-xl justify-center">
                             <i class="fas fa-qrcode"></i> Get Your Ekam Care Card
                         </a>
-                        <a href="#how-it-works" class="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold border-2 border-gray-200 hover:border-red-600 hover:text-red-600 transition flex items-center gap-2">
+                        <a href="#how-it-works" class="bg-white text-gray-900 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold border-2 border-gray-200 hover:border-red-600 hover:text-red-600 transition flex items-center gap-2 justify-center">
                             <i class="fas fa-play-circle"></i> How It Works
                         </a>
                     </div>
                 </div>
-                <div class="relative fade-in" style="animation-delay: 0.3s;">
+                <div class="relative fade-in mobile-float-adjust" style="animation-delay: 0.3s;">
                     <div class="relative">
                         <!-- Card Image -->
-                        <img src="7.png" alt="Ekam Care Emergency Card" class="rounded-3xl shadow-2xl w-full max-w-md mx-auto transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                        <img src="7.png" alt="Ekam Care Emergency Card" class="mobile-img rounded-3xl shadow-2xl w-full max-w-md mx-auto transform rotate-3 hover:rotate-0 transition-transform duration-500">
                         <!-- Floating Elements -->
-                        <div class="absolute -top-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg animate-bounce">
+                        <div class="absolute -top-2 sm:-top-4 -right-2 sm:-right-4 bg-green-500 text-white px-2 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-medium shadow-lg animate-bounce">
                             <i class="fab fa-whatsapp mr-1"></i> WhatsApp Alert
                         </div>
-                        <div class="absolute -bottom-4 -left-4 bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg">
+                        <div class="absolute -bottom-2 sm:-bottom-4 -left-2 sm:-left-4 bg-blue-600 text-white px-2 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-medium shadow-lg">
                             <i class="fas fa-map-pin mr-1"></i> GPS Location
                         </div>
                     </div>
@@ -226,28 +284,28 @@
     </section>
 
     <!-- Trust Strip -->
-    <section class="bg-gray-900 py-6">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-wrap justify-center items-center gap-8 lg:gap-16">
-                <div class="flex items-center gap-2 text-white">
-                    <i class="fas fa-mobile-screen text-red-400 text-xl"></i>
-                    <span class="text-sm font-medium">No App Required</span>
+    <section class="bg-gray-900 py-4 sm:py-6">
+        <div class="max-w-7xl mx-auto mobile-px px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-center items-center gap-4 sm:gap-8 lg:gap-16">
+                <div class="flex items-center gap-2 text-white text-center">
+                    <i class="fas fa-mobile-screen text-red-400 text-lg sm:text-xl"></i>
+                    <span class="text-xs sm:text-sm font-medium">No App Required</span>
                 </div>
-                <div class="flex items-center gap-2 text-white">
-                    <i class="fas fa-qrcode text-red-400 text-xl"></i>
-                    <span class="text-sm font-medium">Works on Any Smartphone</span>
+                <div class="flex items-center gap-2 text-white text-center">
+                    <i class="fas fa-qrcode text-red-400 text-lg sm:text-xl"></i>
+                    <span class="text-xs sm:text-sm font-medium">Works on Any Smartphone</span>
                 </div>
-                <div class="flex items-center gap-2 text-white">
-                    <i class="fas fa-location-crosshairs text-red-400 text-xl"></i>
-                    <span class="text-sm font-medium">Live Location Sharing</span>
+                <div class="flex items-center gap-2 text-white text-center">
+                    <i class="fas fa-location-crosshairs text-red-400 text-lg sm:text-xl"></i>
+                    <span class="text-xs sm:text-sm font-medium">Live Location Sharing</span>
                 </div>
-                <div class="flex items-center gap-2 text-white">
-                    <i class="fas fa-bolt text-red-400 text-xl"></i>
-                    <span class="text-sm font-medium">Designed for Emergencies</span>
+                <div class="flex items-center gap-2 text-white text-center">
+                    <i class="fas fa-bolt text-red-400 text-lg sm:text-xl"></i>
+                    <span class="text-xs sm:text-sm font-medium">Designed for Emergencies</span>
                 </div>
-                <div class="flex items-center gap-2 text-white">
-                    <i class="fas fa-heart text-red-400 text-xl"></i>
-                    <span class="text-sm font-medium">Trusted by Parents & Schools</span>
+                <div class="flex items-center gap-2 text-white text-center">
+                    <i class="fas fa-heart text-red-400 text-lg sm:text-xl"></i>
+                    <span class="text-xs sm:text-sm font-medium">Trusted by Parents & Schools</span>
                 </div>
             </div>
         </div>
@@ -294,109 +352,109 @@
     </section>
 
     <!-- How It Works Section -->
-    <section id="how-it-works" class="py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-red-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <span class="inline-block text-red-600 font-semibold uppercase tracking-wider mb-4">Simple & Effective</span>
-                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">How Ekam Care Works</h2>
-                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">5 simple steps that can save a life in an emergency situation</p>
+    <section id="how-it-works" class="mobile-py py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-red-50">
+        <div class="max-w-7xl mx-auto mobile-px px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 sm:mb-16">
+                <span class="inline-block text-red-600 font-semibold uppercase tracking-wider mb-4 text-xs sm:text-sm">Simple & Effective</span>
+                <h2 class="mobile-text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">How Ekam Care Works</h2>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto mobile-text-sm sm:text-base">5 simple steps that can save a life in an emergency situation</p>
             </div>
 
             <div class="relative">
                 <!-- Steps -->
-                <div class="grid md:grid-cols-5 gap-8">
+                <div class="steps-mobile grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8">
                     <!-- Step 1 -->
                     <div class="relative text-center group">
-                        <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl border-4 border-red-100 group-hover:border-red-500 transition-all duration-300 relative z-10">
-                            <span class="text-3xl font-bold text-red-600">1</span>
+                        <div class="w-16 sm:w-20 h-16 sm:h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-xl border-4 border-red-100 group-hover:border-red-500 transition-all duration-300 relative z-10">
+                            <span class="text-2xl sm:text-3xl font-bold text-red-600">1</span>
                         </div>
-                        <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow h-full">
-                            <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                                <i class="fas fa-wallet text-red-600 text-2xl"></i>
+                        <div class="bg-white rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow h-full">
+                            <div class="w-12 sm:w-14 h-12 sm:h-14 bg-red-100 rounded-xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                                <i class="fas fa-wallet text-red-600 text-xl sm:text-2xl"></i>
                             </div>
-                            <h4 class="font-bold text-gray-900 mb-3">Carry the Card</h4>
-                            <p class="text-gray-600 text-sm">Keep the Ekam Care Card in your wallet, pocket, bag, or school ID holder.</p>
+                            <h4 class="font-bold text-gray-900 mb-2 sm:mb-3 mobile-text-base sm:text-lg">Carry the Card</h4>
+                            <p class="text-gray-600 mobile-text-sm sm:text-sm">Keep the Ekam Care Card in your wallet, pocket, bag, or school ID holder.</p>
                         </div>
                     </div>
 
                     <!-- Step 2 -->
                     <div class="relative text-center group">
-                        <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl border-4 border-red-100 group-hover:border-red-500 transition-all duration-300 relative z-10">
-                            <span class="text-3xl font-bold text-red-600">2</span>
+                        <div class="w-16 sm:w-20 h-16 sm:h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-xl border-4 border-red-100 group-hover:border-red-500 transition-all duration-300 relative z-10">
+                            <span class="text-2xl sm:text-3xl font-bold text-red-600">2</span>
                         </div>
-                        <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow h-full">
-                            <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                                <i class="fas fa-triangle-exclamation text-orange-600 text-2xl"></i>
+                        <div class="bg-white rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow h-full">
+                            <div class="w-12 sm:w-14 h-12 sm:h-14 bg-orange-100 rounded-xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                                <i class="fas fa-triangle-exclamation text-orange-600 text-xl sm:text-2xl"></i>
                             </div>
-                            <h4 class="font-bold text-gray-900 mb-3">Emergency Situation</h4>
-                            <p class="text-gray-600 text-sm">If the cardholder is lost, injured, unconscious, or unable to communicate.</p>
+                            <h4 class="font-bold text-gray-900 mb-2 sm:mb-3 mobile-text-base sm:text-lg">Emergency Situation</h4>
+                            <p class="text-gray-600 mobile-text-sm sm:text-sm">If the cardholder is lost, injured, unconscious, or unable to communicate.</p>
                         </div>
                     </div>
 
                     <!-- Step 3 -->
                     <div class="relative text-center group">
-                        <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl border-4 border-red-100 group-hover:border-red-500 transition-all duration-300 relative z-10">
-                            <span class="text-3xl font-bold text-red-600">3</span>
+                        <div class="w-16 sm:w-20 h-16 sm:h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-xl border-4 border-red-100 group-hover:border-red-500 transition-all duration-300 relative z-10">
+                            <span class="text-2xl sm:text-3xl font-bold text-red-600">3</span>
                         </div>
-                        <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow h-full">
-                            <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                                <i class="fas fa-qrcode text-blue-600 text-2xl"></i>
+                        <div class="bg-white rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow h-full">
+                            <div class="w-12 sm:w-14 h-12 sm:h-14 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                                <i class="fas fa-qrcode text-blue-600 text-xl sm:text-2xl"></i>
                             </div>
-                            <h4 class="font-bold text-gray-900 mb-3">Scan the QR Code</h4>
-                            <p class="text-gray-600 text-sm">Any person nearby scans the QR code using any phone camera. <strong>No app. No login.</strong></p>
+                            <h4 class="font-bold text-gray-900 mb-2 sm:mb-3 mobile-text-base sm:text-lg">Scan the QR Code</h4>
+                            <p class="text-gray-600 mobile-text-sm sm:text-sm">Any person nearby scans the QR code using any phone camera. <strong>No app. No login.</strong></p>
                         </div>
                     </div>
 
                     <!-- Step 4 -->
                     <div class="relative text-center group">
-                        <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl border-4 border-red-100 group-hover:border-red-500 transition-all duration-300 relative z-10">
-                            <span class="text-3xl font-bold text-red-600">4</span>
+                        <div class="w-16 sm:w-20 h-16 sm:h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-xl border-4 border-red-100 group-hover:border-red-500 transition-all duration-300 relative z-10">
+                            <span class="text-2xl sm:text-3xl font-bold text-red-600">4</span>
                         </div>
-                        <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow h-full">
-                            <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                                <i class="fab fa-whatsapp text-green-600 text-2xl"></i>
+                        <div class="bg-white rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow h-full">
+                            <div class="w-12 sm:w-14 h-12 sm:h-14 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                                <i class="fab fa-whatsapp text-green-600 text-xl sm:text-2xl"></i>
                             </div>
-                            <h4 class="font-bold text-gray-900 mb-3">Automatic Alert</h4>
-                            <p class="text-gray-600 text-sm">WhatsApp opens with a pre-filled emergency message and live location.</p>
+                            <h4 class="font-bold text-gray-900 mb-2 sm:mb-3 mobile-text-base sm:text-lg">Automatic Alert</h4>
+                            <p class="text-gray-600 mobile-text-sm sm:text-sm">WhatsApp opens with a pre-filled emergency message and live location.</p>
                         </div>
                     </div>
 
                     <!-- Step 5 -->
                     <div class="relative text-center group">
-                        <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl border-4 border-red-100 group-hover:border-red-500 transition-all duration-300 relative z-10">
-                            <span class="text-3xl font-bold text-red-600">5</span>
+                        <div class="w-16 sm:w-20 h-16 sm:h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-xl border-4 border-red-100 group-hover:border-red-500 transition-all duration-300 relative z-10">
+                            <span class="text-2xl sm:text-3xl font-bold text-red-600">5</span>
                         </div>
-                        <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow h-full">
-                            <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                                <i class="fas fa-users text-purple-600 text-2xl"></i>
+                        <div class="bg-white rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow h-full">
+                            <div class="w-12 sm:w-14 h-12 sm:h-14 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                                <i class="fas fa-users text-purple-600 text-xl sm:text-2xl"></i>
                             </div>
-                            <h4 class="font-bold text-gray-900 mb-3">Family Informed</h4>
-                            <p class="text-gray-600 text-sm">Emergency contacts receive the alert and can reach the victim or call services.</p>
+                            <h4 class="font-bold text-gray-900 mb-2 sm:mb-3 mobile-text-base sm:text-lg">Family Informed</h4>
+                            <p class="text-gray-600 mobile-text-sm sm:text-sm">Emergency contacts receive the alert and can reach the victim or call services.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Features after steps -->
-            <div class="mt-32 bg-white rounded-2xl p-8 shadow-xl border-l-4 border-blue-600">
-                <div class="grid md:grid-cols-3 gap-8 text-center">
+            <div class="mt-16 sm:mt-32 bg-white rounded-2xl p-6 sm:p-8 shadow-xl border-l-4 border-blue-600">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-center">
                     <div class="flex flex-col items-center">
-                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                            <i class="fas fa-check text-blue-600 text-xl"></i>
+                        <div class="w-10 sm:w-12 h-10 sm:h-12 bg-blue-100 rounded-full flex items-center justify-center mb-3 sm:mb-4">
+                            <i class="fas fa-check text-blue-600 text-lg sm:text-xl"></i>
                         </div>
-                        <p class="font-semibold text-gray-900">Reach the victim</p>
+                        <p class="font-semibold text-gray-900 mobile-text-sm sm:text-base">Reach the victim</p>
                     </div>
                     <div class="flex flex-col items-center">
-                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                            <i class="fas fa-check text-blue-600 text-xl"></i>
+                        <div class="w-10 sm:w-12 h-10 sm:h-12 bg-blue-100 rounded-full flex items-center justify-center mb-3 sm:mb-4">
+                            <i class="fas fa-check text-blue-600 text-lg sm:text-xl"></i>
                         </div>
-                        <p class="font-semibold text-gray-900">Call emergency services</p>
+                        <p class="font-semibold text-gray-900 mobile-text-sm sm:text-base">Call emergency services</p>
                     </div>
                     <div class="flex flex-col items-center">
-                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                            <i class="fas fa-check text-blue-600 text-xl"></i>
+                        <div class="w-10 sm:w-12 h-10 sm:h-12 bg-blue-100 rounded-full flex items-center justify-center mb-3 sm:mb-4">
+                            <i class="fas fa-check text-blue-600 text-lg sm:text-xl"></i>
                         </div>
-                        <p class="font-semibold text-gray-900">Guide help to exact location</p>
+                        <p class="font-semibold text-gray-900 mobile-text-sm sm:text-base">Guide help to exact location</p>
                     </div>
                 </div>
             </div>
@@ -487,85 +545,85 @@
     </section>
 
     <!-- Card Selection Section -->
-    <section id="cards" class="py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <span class="inline-block text-red-600 font-semibold uppercase tracking-wider mb-4">Choose Your Style</span>
-                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">Select Your Ekam Care Card</h2>
-                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">All cards are priced at ₹299 each. Choose your preferred design and customize your emergency information.</p>
+    <section id="cards" class="mobile-py py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="max-w-7xl mx-auto mobile-px px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 sm:mb-16">
+                <span class="inline-block text-red-600 font-semibold uppercase tracking-wider mb-4 text-xs sm:text-sm">Choose Your Style</span>
+                <h2 class="mobile-text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">Select Your Ekam Care Card</h2>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto mobile-text-sm sm:text-base">All cards are priced at ₹299 each. Choose your preferred design and customize your emergency information.</p>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-12 items-start">
+            <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 items-start">
                 <!-- Cards Grid -->
-                <div class="grid grid-cols-2 gap-6" id="cardsGrid">
+                <div class="cards-mobile grid grid-cols-2 gap-4 sm:gap-6" id="cardsGrid">
                     <!-- Blossom Card -->
-                    <div class="card-item bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:scale-105" data-card="blossom">
-                        <div class="aspect-[3/2] rounded-xl mb-4 overflow-hidden">
+                    <div class="card-item bg-white rounded-xl sm:rounded-2xl p-3 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:scale-105" data-card="blossom">
+                        <div class="aspect-[3/2] rounded-lg sm:rounded-xl mb-3 sm:mb-4 overflow-hidden">
                             <img src="5.png" alt="Blossom Card" class="w-full h-full object-cover">
                         </div>
                         <div class="text-center">
-                            <h4 class="font-bold text-gray-900 mb-2">Blossom Card</h4>
-                            <p class="text-green-600 font-bold text-xl">₹299</p>
+                            <h4 class="font-bold text-gray-900 mb-1 sm:mb-2 mobile-text-sm sm:text-base">Blossom Card</h4>
+                            <p class="text-green-600 font-bold mobile-text-lg sm:text-xl">₹299</p>
                         </div>
                     </div>
 
                     <!-- Charcoal Card -->
-                    <div class="card-item bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:scale-105" data-card="charcoal">
-                        <div class="aspect-[3/2] rounded-xl mb-4 overflow-hidden">
+                    <div class="card-item bg-white rounded-xl sm:rounded-2xl p-3 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:scale-105" data-card="charcoal">
+                        <div class="aspect-[3/2] rounded-lg sm:rounded-xl mb-3 sm:mb-4 overflow-hidden">
                             <img src="7.png" alt="Charcoal Card" class="w-full h-full object-cover">
                         </div>
                         <div class="text-center">
-                            <h4 class="font-bold text-gray-900 mb-2">Charcoal Card</h4>
-                            <p class="text-green-600 font-bold text-xl">₹299</p>
+                            <h4 class="font-bold text-gray-900 mb-1 sm:mb-2 mobile-text-sm sm:text-base">Charcoal Card</h4>
+                            <p class="text-green-600 font-bold mobile-text-lg sm:text-xl">₹299</p>
                         </div>
                     </div>
 
                     <!-- Red Card -->
-                    <div class="card-item bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:scale-105" data-card="red">
-                        <div class="aspect-[3/2] rounded-xl mb-4 overflow-hidden">
+                    <div class="card-item bg-white rounded-xl sm:rounded-2xl p-3 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:scale-105" data-card="red">
+                        <div class="aspect-[3/2] rounded-lg sm:rounded-xl mb-3 sm:mb-4 overflow-hidden">
                             <img src="2.png" alt="Amazon Red Card" class="w-full h-full object-cover">
                         </div>
                         <div class="text-center">
-                            <h4 class="font-bold text-gray-900 mb-2">Amazon Red Card</h4>
-                            <p class="text-green-600 font-bold text-xl">₹299</p>
+                            <h4 class="font-bold text-gray-900 mb-1 sm:mb-2 mobile-text-sm sm:text-base">Amazon Red Card</h4>
+                            <p class="text-green-600 font-bold mobile-text-lg sm:text-xl">₹299</p>
                         </div>
                     </div>
 
                     <!-- Aqua Blue Card -->
-                    <div class="card-item bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:scale-105" data-card="aqua">
-                        <div class="aspect-[3/2] rounded-xl mb-4 overflow-hidden">
+                    <div class="card-item bg-white rounded-xl sm:rounded-2xl p-3 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:scale-105" data-card="aqua">
+                        <div class="aspect-[3/2] rounded-lg sm:rounded-xl mb-3 sm:mb-4 overflow-hidden">
                             <img src="1.png" alt="Aqua Blue Card" class="w-full h-full object-cover">
                         </div>
                         <div class="text-center">
-                            <h4 class="font-bold text-gray-900 mb-2">Aqua Blue Card</h4>
-                            <p class="text-green-600 font-bold text-xl">₹299</p>
+                            <h4 class="font-bold text-gray-900 mb-1 sm:mb-2 mobile-text-sm sm:text-base">Aqua Blue Card</h4>
+                            <p class="text-green-600 font-bold mobile-text-lg sm:text-xl">₹299</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Card Customization Form -->
-                <div class="bg-white rounded-2xl p-8 shadow-xl border-2 border-gray-100" id="cardForm" style="display: none;">
-                    <div class="flex items-center justify-between mb-6">
-                        <h3 class="text-2xl font-bold text-gray-900">Customize Your Card</h3>
-                        <button id="closeForm" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition">
-                            <i class="fas fa-times text-gray-600"></i>
+                <div class="card-form-mobile bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-xl border-2 border-gray-100" id="cardForm" style="display: none;">
+                    <div class="flex items-center justify-between mb-4 sm:mb-6">
+                        <h3 class="mobile-text-xl sm:text-2xl font-bold text-gray-900">Customize Your Card</h3>
+                        <button id="closeForm" class="w-8 sm:w-10 h-8 sm:h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition">
+                            <i class="fas fa-times text-gray-600 text-sm sm:text-base"></i>
                         </button>
                     </div>
 
-                    <form id="cardCustomizationForm" class="space-y-6">
+                    <form id="cardCustomizationForm" class="space-y-4 sm:space-y-6">
                         <input type="hidden" id="selectedCard" name="selectedCard" value="">
                         
                         <!-- Card Holder Name -->
                         <div>
-                            <label for="cardHolderName" class="block text-gray-700 font-medium mb-2">Card Holder Name *</label>
-                            <input type="text" id="cardHolderName" name="cardHolderName" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition" placeholder="Enter full name (Required)">
-                            <p class="text-sm text-gray-500 mt-1">This field is mandatory and cannot be left blank</p>
+                            <label for="cardHolderName" class="block text-gray-700 font-medium mb-2 mobile-text-sm sm:text-base">Card Holder Name *</label>
+                            <input type="text" id="cardHolderName" name="cardHolderName" required class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition mobile-text-sm sm:text-base" placeholder="Enter full name (Required)">
+                            <p class="text-xs sm:text-sm text-gray-500 mt-1">This field is mandatory and cannot be left blank</p>
                         </div>
 
                         <!-- Blood Group -->
                         <div>
-                            <label for="bloodGroup" class="block text-gray-700 font-medium mb-2">Blood Group</label>
-                            <select id="bloodGroup" name="bloodGroup" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition bg-white">
+                            <label for="bloodGroup" class="block text-gray-700 font-medium mb-2 mobile-text-sm sm:text-base">Blood Group</label>
+                            <select id="bloodGroup" name="bloodGroup" class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition bg-white mobile-text-sm sm:text-base">
                                 <option value="">Select Blood Group (Optional)</option>
                                 <option value="A+">A+</option>
                                 <option value="A-">A-</option>
@@ -576,14 +634,14 @@
                                 <option value="O+">O+</option>
                                 <option value="O-">O-</option>
                             </select>
-                            <p class="text-sm text-gray-500 mt-1">Leave blank for a white box to fill later with permanent marker</p>
+                            <p class="text-xs sm:text-sm text-gray-500 mt-1">Leave blank for a white box to fill later with permanent marker</p>
                         </div>
 
                         <!-- Emergency Contact -->
                         <div>
-                            <label for="emergencyContact" class="block text-gray-700 font-medium mb-2">Emergency Contact Number *</label>
-                            <div class="flex gap-3">
-                                <select id="countryCode" name="countryCode" class="px-3 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition bg-white">
+                            <label for="emergencyContact" class="block text-gray-700 font-medium mb-2 mobile-text-sm sm:text-base">Emergency Contact Number *</label>
+                            <div class="flex gap-2 sm:gap-3">
+                                <select id="countryCode" name="countryCode" class="px-2 sm:px-3 py-2 sm:py-3 border border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition bg-white text-xs sm:text-base">
                                     <option value="+91">🇮🇳 +91</option>
                                     <option value="+1">🇺🇸 +1</option>
                                     <option value="+44">🇬🇧 +44</option>
@@ -591,38 +649,38 @@
                                     <option value="+65">🇸🇬 +65</option>
                                     <option value="+60">🇲🇾 +60</option>
                                 </select>
-                                <input type="tel" id="emergencyContact" name="emergencyContact" required class="flex-1 px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition" placeholder="Emergency contact number">
+                                <input type="tel" id="emergencyContact" name="emergencyContact" required class="flex-1 px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition mobile-text-sm sm:text-base" placeholder="Emergency contact number">
                             </div>
-                            <p class="text-sm text-gray-500 mt-1">This number will receive WhatsApp alerts in emergencies</p>
+                            <p class="text-xs sm:text-sm text-gray-500 mt-1">This number will receive WhatsApp alerts in emergencies</p>
                         </div>
 
                         <!-- Back Side Number -->
                         <div>
-                            <label for="backSideNumber" class="block text-gray-700 font-medium mb-2">Number on Back Side</label>
-                            <input type="tel" id="backSideNumber" name="backSideNumber" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition" placeholder="Additional contact number (Optional)">
-                            <p class="text-sm text-gray-500 mt-1">Leave blank for a white box to fill later with permanent marker</p>
+                            <label for="backSideNumber" class="block text-gray-700 font-medium mb-2 mobile-text-sm sm:text-base">Number on Back Side</label>
+                            <input type="tel" id="backSideNumber" name="backSideNumber" class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition mobile-text-sm sm:text-base" placeholder="Additional contact number (Optional)">
+                            <p class="text-xs sm:text-sm text-gray-500 mt-1">Leave blank for a white box to fill later with permanent marker</p>
                         </div>
 
                         <!-- Medical Conditions -->
                         <div>
-                            <label for="medicalConditions" class="block text-gray-700 font-medium mb-2">Medical Conditions/Allergies</label>
-                            <textarea id="medicalConditions" name="medicalConditions" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition resize-none" placeholder="Any medical conditions, allergies, or important health information (Optional)"></textarea>
-                            <p class="text-sm text-gray-500 mt-1">Leave blank for a white box to fill later with permanent marker</p>
+                            <label for="medicalConditions" class="block text-gray-700 font-medium mb-2 mobile-text-sm sm:text-base">Medical Conditions/Allergies</label>
+                            <textarea id="medicalConditions" name="medicalConditions" rows="3" class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition resize-none mobile-text-sm sm:text-base" placeholder="Any medical conditions, allergies, or important health information (Optional)"></textarea>
+                            <p class="text-xs sm:text-sm text-gray-500 mt-1">Leave blank for a white box to fill later with permanent marker</p>
                         </div>
 
                         <!-- Important Note -->
-                        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-xl">
-                            <div class="flex items-start gap-3">
-                                <i class="fas fa-info-circle text-blue-500 mt-1"></i>
+                        <div class="bg-blue-50 border-l-4 border-blue-500 p-3 sm:p-4 rounded-r-xl">
+                            <div class="flex items-start gap-2 sm:gap-3">
+                                <i class="fas fa-info-circle text-blue-500 mt-1 text-sm sm:text-base"></i>
                                 <div>
-                                    <h4 class="font-semibold text-blue-900 mb-1">Blank Field Policy</h4>
-                                    <p class="text-blue-800 text-sm">Any field left blank will appear as a white box on your card. You can fill these spaces later using any permanent marker or sketch pen.</p>
+                                    <h4 class="font-semibold text-blue-900 mb-1 mobile-text-sm sm:text-base">Blank Field Policy</h4>
+                                    <p class="text-blue-800 text-xs sm:text-sm">Any field left blank will appear as a white box on your card. You can fill these spaces later using any permanent marker or sketch pen.</p>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Submit Button -->
-                        <button type="button" id="payNowBtn" class="w-full bg-green-600 text-white py-4 rounded-xl font-semibold hover:bg-green-700 transition flex items-center justify-center gap-2">
+                        <button type="button" id="payNowBtn" class="w-full bg-green-600 text-white py-3 sm:py-4 rounded-lg sm:rounded-xl font-semibold hover:bg-green-700 transition flex items-center justify-center gap-2 mobile-text-sm sm:text-base">
                             <i class="fas fa-bookmark"></i> Reserve Your Card Now
                         </button>
                     </form>
