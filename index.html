@@ -156,6 +156,8 @@
             transform: translateX(0);
         }
 
+
+
         /* Mobile Responsive Styles */
         @media (max-width: 640px) {
             /* Hero section mobile */
@@ -267,7 +269,7 @@
                     <li><a href="#about" class="text-gray-700 hover:text-red-600 transition">About</a></li>
                     <li><a href="#how-it-works" class="text-gray-700 hover:text-red-600 transition">How It Works</a></li>
                     <li><a href="#comparison" class="text-gray-700 hover:text-red-600 transition">Why Ekam Care</a></li>
-                    <li><a href="#cards" class="text-gray-700 hover:text-red-600 transition">Choose Card</a></li>
+                    <li><a href="cards.html" class="text-gray-700 hover:text-red-600 transition">Choose Card</a></li>
                     <li><a href="#who" class="text-gray-700 hover:text-red-600 transition">Who It's For</a></li>
                     <li><a href="#pricing" class="text-gray-700 hover:text-red-600 transition">Pricing</a></li>
                     <li><a href="#contact" class="text-gray-700 hover:text-red-600 transition">Contact</a></li>
@@ -275,7 +277,7 @@
 
                 <!-- CTA Button -->
                 <div class="hidden md:flex items-center gap-3">
-                    <a href="#cards" class="bg-red-600 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-red-700 transition flex items-center gap-2 shadow-lg">
+                    <a href="cards.html" class="bg-red-600 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-red-700 transition flex items-center gap-2 shadow-lg">
                         <i class="fas fa-qrcode"></i> Get Your Card
                     </a>
                 </div>
@@ -293,7 +295,7 @@
                     <li><a href="#about" class="text-gray-700">About</a></li>
                     <li><a href="#how-it-works" class="text-gray-700">How It Works</a></li>
                     <li><a href="#comparison" class="text-gray-700">Why Ekam Care</a></li>
-                    <li><a href="#cards" class="text-gray-700">Choose Card</a></li>
+                    <li><a href="cards.html" class="text-gray-700">Choose Card</a></li>
                     <li><a href="#who" class="text-gray-700">Who It's For</a></li>
                     <li><a href="#pricing" class="text-gray-700">Pricing</a></li>
                     <li><a href="#contact" class="text-gray-700">Contact</a></li>
@@ -321,7 +323,7 @@
                         A QR-based emergency safety card that helps anyone instantly notify your family with your live location — <strong>no app required.</strong>
                     </p>
                     <div class="hero-buttons flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mb-8 sm:mb-10">
-                        <a href="#cards" class="pulse-btn bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:bg-red-700 transition flex items-center gap-2 shadow-xl justify-center">
+                        <a href="cards.html" class="pulse-btn bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:bg-red-700 transition flex items-center gap-2 shadow-xl justify-center">
                             <i class="fas fa-qrcode"></i> Get Your Ekam Care Card
                         </a>
                         <a href="#how-it-works" class="bg-white text-gray-900 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold border-2 border-gray-200 hover:border-red-600 hover:text-red-600 transition flex items-center gap-2 justify-center">
@@ -606,146 +608,34 @@
         </div>
     </section>
 
-    <!-- Card Selection Section -->
-    <section id="cards" class="mobile-py py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div class="max-w-7xl mx-auto mobile-px px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 sm:mb-16">
-                <span class="inline-block text-red-600 font-semibold uppercase tracking-wider mb-4 text-xs sm:text-sm">Choose Your Style</span>
-                <h2 class="mobile-text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">Select Your Ekam Care Card</h2>
-                <p class="text-gray-600 mt-4 max-w-2xl mx-auto mobile-text-sm sm:text-base">All cards are priced at ₹299 each. Choose your preferred design and customize your emergency information.</p>
+    <!-- Quick Card Preview Section -->
+    <section class="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Choose Your Emergency Card</h2>
+                <p class="text-lg text-gray-600 mb-8">Discover our collection of 9 unique emergency card designs. Each card features QR code technology for instant emergency alerts and comes with customizable information fields.</p>
             </div>
-
-            <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 items-start">
-                <!-- Cards Grid -->
-                <div class="cards-mobile grid grid-cols-2 gap-4 sm:gap-6" id="cardsGrid">
-                    <!-- Blossom Card -->
-                    <div class="card-item bg-white rounded-xl sm:rounded-2xl p-3 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:scale-105" data-card="blossom">
-                        <div class="aspect-[3/2] rounded-lg sm:rounded-xl mb-3 sm:mb-4 overflow-hidden">
-                            <img src="5.png" alt="Blossom Card" class="w-full h-full object-cover">
+            
+            <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+                <!-- Card Preview -->
+                <div class="flex-1 flex justify-center">
+                    <div class="bg-white rounded-2xl shadow-xl p-6 transform hover:scale-105 transition-transform duration-300">
+                        <div class="aspect-[3/2] w-80 rounded-xl overflow-hidden">
+                            <img src="55.png" alt="Deep Mango Emergency Card" class="w-full h-full object-cover">
                         </div>
-                        <div class="text-center">
-                            <h4 class="font-bold text-gray-900 mb-1 sm:mb-2 mobile-text-sm sm:text-base">Blossom Card</h4>
-                            <p class="text-green-600 font-bold mobile-text-lg sm:text-xl">₹299</p>
-                        </div>
-                    </div>
-
-                    <!-- Charcoal Card -->
-                    <div class="card-item bg-white rounded-xl sm:rounded-2xl p-3 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:scale-105" data-card="charcoal">
-                        <div class="aspect-[3/2] rounded-lg sm:rounded-xl mb-3 sm:mb-4 overflow-hidden">
-                            <img src="7.png" alt="Charcoal Card" class="w-full h-full object-cover">
-                        </div>
-                        <div class="text-center">
-                            <h4 class="font-bold text-gray-900 mb-1 sm:mb-2 mobile-text-sm sm:text-base">Charcoal Card</h4>
-                            <p class="text-green-600 font-bold mobile-text-lg sm:text-xl">₹299</p>
-                        </div>
-                    </div>
-
-                    <!-- Red Card -->
-                    <div class="card-item bg-white rounded-xl sm:rounded-2xl p-3 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:scale-105" data-card="red">
-                        <div class="aspect-[3/2] rounded-lg sm:rounded-xl mb-3 sm:mb-4 overflow-hidden">
-                            <img src="2.png" alt="Amazon Red Card" class="w-full h-full object-cover object-center">
-                        </div>
-                        <div class="text-center">
-                            <h4 class="font-bold text-gray-900 mb-1 sm:mb-2 mobile-text-sm sm:text-base">Amazon Red Card</h4>
-                            <p class="text-green-600 font-bold mobile-text-lg sm:text-xl">₹299</p>
-                        </div>
-                    </div>
-
-                    <!-- Aqua Blue Card -->
-                    <div class="card-item bg-white rounded-xl sm:rounded-2xl p-3 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:scale-105" data-card="aqua">
-                        <div class="aspect-[3/2] rounded-lg sm:rounded-xl mb-3 sm:mb-4 overflow-hidden">
-                            <img src="1.png" alt="Aqua Blue Card" class="w-full h-full object-cover">
-                        </div>
-                        <div class="text-center">
-                            <h4 class="font-bold text-gray-900 mb-1 sm:mb-2 mobile-text-sm sm:text-base">Aqua Blue Card</h4>
-                            <p class="text-green-600 font-bold mobile-text-lg sm:text-xl">₹299</p>
+                        <div class="text-center mt-4">
+                            <h3 class="text-xl font-bold text-gray-900">Deep Mango Card</h3>
                         </div>
                     </div>
                 </div>
-
-                <!-- Card Customization Form -->
-                <div class="card-form-mobile bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-xl border-2 border-gray-100" id="cardForm" style="display: none;">
-                    <div class="flex items-center justify-between mb-4 sm:mb-6">
-                        <h3 class="mobile-text-xl sm:text-2xl font-bold text-gray-900">Customize Your Card</h3>
-                        <button id="closeForm" class="w-8 sm:w-10 h-8 sm:h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition">
-                            <i class="fas fa-times text-gray-600 text-sm sm:text-base"></i>
-                        </button>
-                    </div>
-
-                    <form id="cardCustomizationForm" class="space-y-4 sm:space-y-6">
-                        <input type="hidden" id="selectedCard" name="selectedCard" value="">
-                        
-                        <!-- Card Holder Name -->
-                        <div>
-                            <label for="cardHolderName" class="block text-gray-700 font-medium mb-2 mobile-text-sm sm:text-base">Card Holder Name *</label>
-                            <input type="text" id="cardHolderName" name="cardHolderName" required class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition mobile-text-sm sm:text-base" placeholder="Enter full name (Required)">
-                            <p class="text-xs sm:text-sm text-gray-500 mt-1">This field is mandatory and cannot be left blank</p>
-                        </div>
-
-                        <!-- Blood Group -->
-                        <div>
-                            <label for="bloodGroup" class="block text-gray-700 font-medium mb-2 mobile-text-sm sm:text-base">Blood Group</label>
-                            <select id="bloodGroup" name="bloodGroup" class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition bg-white mobile-text-sm sm:text-base">
-                                <option value="">Select Blood Group (Optional)</option>
-                                <option value="A+">A+</option>
-                                <option value="A-">A-</option>
-                                <option value="B+">B+</option>
-                                <option value="B-">B-</option>
-                                <option value="AB+">AB+</option>
-                                <option value="AB-">AB-</option>
-                                <option value="O+">O+</option>
-                                <option value="O-">O-</option>
-                            </select>
-                            <p class="text-xs sm:text-sm text-gray-500 mt-1">Leave blank for a white box to fill later with permanent marker</p>
-                        </div>
-
-                        <!-- Emergency Contact -->
-                        <div>
-                            <label for="emergencyContact" class="block text-gray-700 font-medium mb-2 mobile-text-sm sm:text-base">Emergency Contact Number *</label>
-                            <div class="flex gap-2 sm:gap-3">
-                                <select id="countryCode" name="countryCode" class="px-2 sm:px-3 py-2 sm:py-3 border border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition bg-white text-xs sm:text-base">
-                                    <option value="+91">🇮🇳 +91</option>
-                                    <option value="+1">🇺🇸 +1</option>
-                                    <option value="+44">🇬🇧 +44</option>
-                                    <option value="+971">🇦🇪 +971</option>
-                                    <option value="+65">🇸🇬 +65</option>
-                                    <option value="+60">🇲🇾 +60</option>
-                                </select>
-                                <input type="tel" id="emergencyContact" name="emergencyContact" required class="flex-1 px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition mobile-text-sm sm:text-base" placeholder="Emergency contact number">
-                            </div>
-                            <p class="text-xs sm:text-sm text-gray-500 mt-1">This number will receive WhatsApp alerts in emergencies</p>
-                        </div>
-
-                        <!-- Back Side Number -->
-                        <div>
-                            <label for="backSideNumber" class="block text-gray-700 font-medium mb-2 mobile-text-sm sm:text-base">Number on Back Side</label>
-                            <input type="tel" id="backSideNumber" name="backSideNumber" class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition mobile-text-sm sm:text-base" placeholder="Additional contact number (Optional)">
-                            <p class="text-xs sm:text-sm text-gray-500 mt-1">Leave blank for a white box to fill later with permanent marker</p>
-                        </div>
-
-                        <!-- Medical Conditions -->
-                        <div>
-                            <label for="medicalConditions" class="block text-gray-700 font-medium mb-2 mobile-text-sm sm:text-base">Medical Conditions/Allergies</label>
-                            <textarea id="medicalConditions" name="medicalConditions" rows="3" class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition resize-none mobile-text-sm sm:text-base" placeholder="Any medical conditions, allergies, or important health information (Optional)"></textarea>
-                            <p class="text-xs sm:text-sm text-gray-500 mt-1">Leave blank for a white box to fill later with permanent marker</p>
-                        </div>
-
-                        <!-- Important Note -->
-                        <div class="bg-blue-50 border-l-4 border-blue-500 p-3 sm:p-4 rounded-r-xl">
-                            <div class="flex items-start gap-2 sm:gap-3">
-                                <i class="fas fa-info-circle text-blue-500 mt-1 text-sm sm:text-base"></i>
-                                <div>
-                                    <h4 class="font-semibold text-blue-900 mb-1 mobile-text-sm sm:text-base">Blank Field Policy</h4>
-                                    <p class="text-blue-800 text-xs sm:text-sm">Any field left blank will appear as a white box on your card. You can fill these spaces later using any permanent marker or sketch pen.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Submit Button -->
-                        <button type="button" id="payNowBtn" class="w-full bg-green-600 text-white py-3 sm:py-4 rounded-lg sm:rounded-xl font-semibold hover:bg-green-700 transition flex items-center justify-center gap-2 mobile-text-sm sm:text-base">
-                            <i class="fas fa-bookmark"></i> Reserve Your Card Now
-                        </button>
-                    </form>
+                
+                <!-- Call to Action -->
+                <div class="flex-1 text-center lg:text-left">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Ready to Get Protected?</h3>
+                    <p class="text-gray-600 mb-6">Browse through all available designs and customize your emergency card with your personal information.</p>
+                    <a href="cards.html" class="inline-flex items-center gap-3 bg-red-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-red-700 transition shadow-lg text-lg">
+                        <i class="fas fa-shopping-cart"></i> Shop Now
+                    </a>
                 </div>
             </div>
         </div>
@@ -1224,7 +1114,7 @@
                     // Create WhatsApp message
                     const message = `🚨 *EKAM CARE CARD ORDER* 🚨\n\n` +
                         `📋 *Card Details:*\n` +
-                        `• Card Type: ${selectedCard.charAt(0).toUpperCase() + selectedCard.slice(1)} Card\n` +
+                        `• Card Type: ${selectedCard.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())} Card\n` +
                         `• Card Holder: ${cardHolderName}\n` +
                         `• Blood Group: ${bloodGroup}\n\n` +
                         `📞 *Contact Information:*\n` +
@@ -1270,73 +1160,7 @@
             }
         });
 
-        // Card Selection Functionality
-        const cardItems = document.querySelectorAll('.card-item');
-        const cardForm = document.getElementById('cardForm');
-        const cardsGrid = document.getElementById('cardsGrid');
-        const selectedCardInput = document.getElementById('selectedCard');
-        const closeFormBtn = document.getElementById('closeForm');
 
-        cardItems.forEach(card => {
-            card.addEventListener('click', () => {
-                const cardType = card.getAttribute('data-card');
-                selectedCardInput.value = cardType;
-                
-                // Show form with animation
-                cardForm.style.display = 'block';
-                setTimeout(() => {
-                    cardForm.classList.add('show');
-                }, 50);
-                
-                // Rearrange cards - move clicked card to top-left, others shift down
-                const clickedCard = card;
-                const otherCards = Array.from(cardItems).filter(c => c !== clickedCard);
-                
-                // Clear grid and rearrange
-                cardsGrid.innerHTML = '';
-                
-                // Add clicked card first (top-left)
-                cardsGrid.appendChild(clickedCard);
-                
-                // Add other cards
-                otherCards.forEach(otherCard => {
-                    cardsGrid.appendChild(otherCard);
-                });
-                
-                // Update grid layout for form display
-                cardsGrid.classList.add('grid-cols-1');
-                cardsGrid.classList.remove('grid-cols-2');
-                
-                // Scroll to form
-                setTimeout(() => {
-                    cardForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }, 300);
-            });
-        });
-
-        // Close form functionality
-        closeFormBtn.addEventListener('click', () => {
-            cardForm.classList.remove('show');
-            
-            setTimeout(() => {
-                cardForm.style.display = 'none';
-                
-                // Reset grid layout
-                cardsGrid.classList.remove('grid-cols-1');
-                cardsGrid.classList.add('grid-cols-2');
-                
-                // Reset card order (Blossom, Charcoal, Red, Aqua)
-                const originalOrder = ['blossom', 'charcoal', 'red', 'aqua'];
-                cardsGrid.innerHTML = '';
-                
-                originalOrder.forEach(cardType => {
-                    const card = document.querySelector(`[data-card="${cardType}"]`);
-                    if (card) {
-                        cardsGrid.appendChild(card);
-                    }
-                });
-            }, 300);
-        });
 
         // Contact form submission to WhatsApp
         document.getElementById('requestForm').addEventListener('submit', function(e) {
